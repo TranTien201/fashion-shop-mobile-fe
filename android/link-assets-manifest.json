@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AlanSans-Bold.ttf",
+      "sha1": "0205ca2e4a8294c8920d3fdfacb46ba37f07e33c"
+    },
+    {
+      "path": "assets/fonts/AlanSans-ExtraBold.ttf",
+      "sha1": "63c60bdf7681e32d17c7832fd363129c22f933b6"
+    },
+    {
+      "path": "assets/fonts/AlanSans-Medium.ttf",
+      "sha1": "c7a90915c4c1f3ebeb0cd99fec2b954a0b27b133"
+    },
+    {
+      "path": "assets/fonts/AlanSans-SemiBold.ttf",
+      "sha1": "4ea8d8ee261ab6f45e4b96f45e59159aec2b8f97"
+    },
+    {
+      "path": "assets/fonts/IndieFlower-Regular.ttf",
+      "sha1": "dab8ff786dd1c6a3e8fa8a54d4d59cf9a703efe1"
+    }
+  ]
+}
