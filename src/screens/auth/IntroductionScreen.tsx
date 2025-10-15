@@ -1,9 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { COLORS } from '../constants/colors';
-import { FONTS } from '../constants/fonts';
+import React, { useEffect } from 'react';
+import { COLORS } from '../../constants/colors';
+import { FONTS } from '../../constants/fonts';
+import type { IntroductionScreenProps } from '../../types';
 
-export default function Introduction() {
+export default function IntroductionScreen({
+  navigation,
+}: IntroductionScreenProps) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.navigate('Onboarding');
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>

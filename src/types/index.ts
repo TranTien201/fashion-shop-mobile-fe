@@ -1,5 +1,5 @@
 export * from './auth.navigation.types';
 
-export * from './main.types';
+export * from './main.navigation.types';
 
-export * from './root.types';
+export * from './root.navigation.types';

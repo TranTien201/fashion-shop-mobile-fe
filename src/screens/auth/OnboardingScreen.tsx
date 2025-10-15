@@ -8,21 +8,24 @@ import {
   Dimensions,
   Animated,
 } from 'react-native';
-import { COLORS } from '../constants/colors';
-import { OnboardSlide } from '../constants/slide';
-import { SlideItem } from '../components/SlideItem';
-import { FONTS } from '../constants/fonts';
+import { COLORS } from '../../constants/colors';
+import { OnboardSlide } from '../../constants/slide';
+import { SlideItem } from '../../components/SlideItem';
+import { FONTS } from '../../constants/fonts';
+import { globalStyle } from '../../styles/globals';
 // import { FONTS } from '../constants/fonts';
+import type { OnboardingScreenProps } from '../../types';
 
 const { width, height } = Dimensions.get('window');
 
-export default function Onboarding({ navigation }) {
+export default function OnboardingScreen({
+  navigation,
+}: OnboardingScreenProps) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   return (
     <View style={styles.viewAll}>
-      <View style={styles.container}>
-        {/* FlatList để trượt */}
+      <View style={globalStyle.container}>
         <FlatList
           data={OnboardSlide}
           renderItem={({ item }) => <SlideItem item={item} />}
@@ -74,7 +77,7 @@ export default function Onboarding({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation?.navigate('Login')}>
-          <Text style={styles.link}>Already Have an Account</Text>
+          <Text style={globalStyle.link}>Already Have an Account</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -87,11 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-  container: {
-    width: width * 0.85,
-    backgroundColor: '#fff',
+    // justifyContent: 'center',
   },
   slide: {
     width,
@@ -109,11 +108,12 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginTop: 10,
-    color: '#1a1a1a',
+    color: COLORS.title,
+    fontFamily: FONTS.bold,
   },
   subtitle: {
     fontSize: 14,
-    color: '#888',
+    color: COLORS.subTitle,
     textAlign: 'center',
     marginTop: 10,
     lineHeight: 20,
@@ -139,17 +139,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   buttonText: {
-    color: '#fff',
+    color: COLORS.white,
     fontSize: 16,
     fontWeight: '600',
     fontFamily: FONTS.extra_bold,
-  },
-  link: {
-    fontSize: 16,
-    color: COLORS.primary,
-    fontFamily: FONTS.extra_bold,
-    fontWeight: '500',
-    marginBottom: 20,
-    textAlign: 'center',
   },
 });

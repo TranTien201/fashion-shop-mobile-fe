@@ -2,18 +2,8 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import Onboarding from './src/screens/Onboarding';
-import Introduction from './src/screens/Introduction';
-
-// Define the types for the navigation stack
-export type RootStackParamList = {
-  Introduction: undefined;
-  Onboarding: undefined;
-  Register: undefined;
-  ForgotPassword: undefined;
-  OTP: { email: string };
-};
+import type { RootStackParamList } from './src/types';
+import { AuthStack } from './src/navigations';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -22,8 +12,8 @@ function App() {
     <NavigationContainer>
       <SafeAreaProvider>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Onboarding" component={Onboarding} />
-          <Stack.Screen name="Introduction" component={Introduction} />
+          <Stack.Screen name="Auth" component={AuthStack} />
+          {/* <Stack.Screen name="Main" component={MainStack} /> */}
         </Stack.Navigator>
       </SafeAreaProvider>
     </NavigationContainer>

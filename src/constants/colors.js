@@ -7,6 +7,8 @@ const lightTheme = {
   income: '#2ECC71',
   shadow: '#000000',
   gray: '#D9D9D9',
+  title: '#1F1F39',
+  subTitle: '#A0A0A0',
 };
 
 export const THEMES = {

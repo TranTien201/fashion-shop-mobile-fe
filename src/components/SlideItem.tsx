@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import { SlideModel } from '../models/slide';
 import { FONTS } from '../constants/fonts';
+import { COLORS } from '../constants/colors';
 
 interface SlideItemProps {
   item: SlideModel;
@@ -26,7 +27,6 @@ const styles = StyleSheet.create({
     width: width * 0.85,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 40,
   },
   imageContainer: {
     width: width * 0.85,
@@ -45,10 +45,12 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.semi_bold,
     textAlign: 'center',
     paddingHorizontal: 20,
+    color: COLORS.title,
   },
   subtitle: {
     fontSize: 14,
-    color: 'gray',
+    color: COLORS.subTitle,
+    fontFamily: FONTS.medium,
     marginTop: 15,
     marginBottom: 20,
     textAlign: 'center',

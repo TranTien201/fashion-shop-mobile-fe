@@ -3,8 +3,12 @@ import type { RouteProp } from '@react-navigation/native';
 
 export type AuthStackParamList = {
   Login: undefined;
-  OTP: undefined;
-  //   OTP: { email: string };
+  OTP: {
+    email: string;
+    onVerify: (code: string) => void;
+    onResend: () => void;
+    onBack: () => void;
+  };
   Register: undefined;
   Introduction: undefined;
   Onboarding: undefined;
@@ -42,17 +46,13 @@ export type OnboardingScreenNavigationProp = NativeStackNavigationProp<
 // ===========================
 // ROUTE PROPS (để lấy params)
 // ===========================
-export type VerifyOTPScreenRouteProp = RouteProp<AuthStackParamList, 'OTP'>;
+export type OTPScreenRouteProp = RouteProp<AuthStackParamList, 'OTP'>;
 
 // ===========================
 // SCREEN PROPS (combine navigation + route)
 // ===========================
 export interface LoginScreenProps {
   navigation: LoginScreenNavigationProp;
-}
-
-export interface OTPScreenProps {
-  navigation: OTPScreenNavigationProp;
 }
 
 export interface RegisterScreenProps {
@@ -67,7 +67,7 @@ export interface OnboardingScreenProps {
   navigation: OnboardingScreenNavigationProp;
 }
 
-// export interface VerifyOTPScreenProps {
-//   navigation: VerifyOTPScreenNavigationProp;
-//   route: VerifyOTPScreenRouteProp;
-// } Trong trường hợp nếu 1 screen cần nhận thêm param
+export interface OTPScreenProps {
+  navigation: OTPScreenNavigationProp;
+  route: OTPScreenRouteProp;
+} //Trong trường hợp nếu 1 screen cần nhận thêm param
